@@ -37,17 +37,17 @@ jobs:
           mv public ../target-repo/public/journal
 
       - name: Commit and push changes
-              env:
-                COMMIT_EMAIL: github-actions[bot]@users.noreply.github.com
-                COMMIT_NAME: github-actions[bot]
-              run: |
-                cd ../target-repo
-                git config user.name "$COMMIT_NAME"
-                git config user.email "$COMMIT_EMAIL"
-                git add public/journal
-                if git diff --cached --quiet; then
-                  echo "No changes to commit"
-                else
-                  git commit -m "Update Quartz build output"
-                  git push origin main
-                fi
+        env:
+          COMMIT_EMAIL: github-actions[bot]@users.noreply.github.com
+          COMMIT_NAME: github-actions[bot]
+        run: |
+          cd ../target-repo
+          git config user.name "$COMMIT_NAME"
+          git config user.email "$COMMIT_EMAIL"
+          git add public/journal
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update Quartz build output"
+            git push origin main
+          fi
