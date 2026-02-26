@@ -1,0 +1,52 @@
+name: Build and Deploy Quartz to Another Repo
+
+on:
+  push:
+    branches:
+      - v4
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout Quartz repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Clone target website repo
+        env:
+          REPO_URL: https://x-access-token:${{ secrets.TARGET_REPO_TOKEN }}@github.com/malajvan/malajvanilla.git
+        run: |
+          git clone $REPO_URL ../target-repo
+
+      - name: Build Quartz site
+        run: npx quartz build
+
+      - name: Replace output in target repo
+        run: |
+          rm -rf ../target-repo/public/journal
+          mkdir -p ../target-repo/public
+          mv public ../target-repo/public/journal
+
+      - name: Commit and push changes
+        env:
+          COMMIT_EMAIL: github-actions[bot]@users.noreply.github.com
+          COMMIT_NAME: github-actions[bot]
+        run: |
+          cd ../target-repo
+          git config user.name "$COMMIT_NAME"
+          git config user.email "$COMMIT_EMAIL"
+          git add public/journal
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update Quartz build output"
+            git push origin main
