@@ -1,6 +1,6 @@
 ---
 title: A sip of nostalgia
-date: Sept 19, 2025
+date: 2025-09-19
 tags:
   - braindump
 ---
