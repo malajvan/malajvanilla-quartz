@@ -3,6 +3,7 @@ title: A sip of nostalgia
 date: 2025-09-19
 tags:
   - braindump
+draft: false
 ---
 In an effort to write more and also archive some of my older writings here, I'm just going to republish a bunch of stuff here, either digitizing my old handwriting or from somewhere else on the internet idk.
 
