@@ -5,11 +5,11 @@ tags:
   - braindump
 draft: false
 ---
-In an effort to write more and also archive some of my older writings here, I'm just going to republish a bunch of stuff here, either digitizing my old handwriting or from somewhere else on the internet idk.
+In an effort to write more and also archive some of my older writings, I'm just going to republish a bunch of stuff here, either digitizing my old handwriting or from somewhere else on the internet idk.
 
 These bullet points were from September 19, 2025. I feel like a different person but also all the same. I don't relate to everything here anymore especially the first one, but oh well. 
 
-- I don’t really look forward to the future. Nothing in the next 3 years excite me and I just generally go through life week by week basis. I have no plan, no desire, no foresights
+- I don’t really look forward to the future. Nothing in the next 3 years excite me and I just generally go through life week by week basis. I have no plan, no desire, no foresight
     
 - The past is like a vast sea where underneath it all I lay dormant in a cave deep beneath the surface. I replay events and obsess over it
     
